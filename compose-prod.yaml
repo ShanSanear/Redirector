@@ -17,13 +17,9 @@ services:
         restart: true
     working_dir: /app/src
     command: bash scripts/prestart.sh
-    env_file:
-      - stack.env
     volumes:
       - ./src/:/app/src/
   server:
-    env_file:
-      - stack.env
     build:
       context: .
     volumes:
@@ -38,8 +34,6 @@ services:
       - redirector
       - "Generic network"
   db:
-    env_file:
-      - .env
     image: postgres
     restart: always
     user: postgres
