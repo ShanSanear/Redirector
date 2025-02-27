@@ -47,6 +47,8 @@ class Settings(BaseSettings):
     POSTGRES_USER: str
     POSTGRES_PASSWORD: str = ""
     POSTGRES_DB: str = ""
+    INIT_USERNAME: str | None = None
+    INIT_PASSWORD: str | None = None
 
     @computed_field  # type: ignore[prop-decorator]
     @property
