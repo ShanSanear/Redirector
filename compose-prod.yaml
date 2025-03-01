@@ -19,6 +19,7 @@ services:
     command: bash scripts/prestart.sh
     volumes:
       - ./src/:/app/src/
+    env_file: stack.env
   server:
     build:
       context: .
@@ -33,6 +34,7 @@ services:
     networks:
       - redirector
       - "Generic network"
+    env_file: stack.env
   db:
     image: postgres
     restart: always
@@ -46,6 +48,7 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+    env_file: stack.env
 volumes:
   redirector-db-data:
 
