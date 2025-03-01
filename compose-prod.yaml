@@ -16,15 +16,20 @@ services:
         condition: service_healthy
         restart: true
     working_dir: /app/src
-    command: bash scripts/prestart.sh
-    volumes:
-      - ./src/:/app/src/
+    command:
+      - bash
+      - -c
+      - |
+        echo `pwd` 
+        scripts/prestart.sh
+    #volumes:
+    #  - ./src/:/app/src/
     env_file: stack.env
   server:
     build:
       context: .
-    volumes:
-      - ./src/:/app/src/
+    #volumes:
+    #  - ./src/:/app/src/
     depends_on:
       db:
         condition: service_healthy
