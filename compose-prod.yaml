@@ -16,13 +16,7 @@ services:
         condition: service_healthy
         restart: true
     working_dir: /app/src
-    command:
-      - bash
-      - -c
-      - |
-        echo `pwd`
-        ls -laR
-        scripts/prestart.sh
+    command: bash scripts/prestart.sh
     env_file: stack.env
   server:
     build:
