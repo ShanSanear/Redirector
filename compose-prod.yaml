@@ -29,7 +29,7 @@ services:
       db:
         condition: service_healthy
       prestart:
-        condition: service_completed_successfully
+        condition: service_started
     networks:
       - redirector
       - "Generic network"
