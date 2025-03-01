@@ -29,7 +29,7 @@ def parse_cors(v: Any) -> list[str] | str:
 ROOT_PROJECT_FOLDER = Path(__file__).parents[3]
 
 ENV_FILE = ROOT_PROJECT_FOLDER / ".env"
-STACK_ENV_FILE = ROOT_PROJECT_FOLDER / ".stack_env"
+STACK_ENV_FILE = ROOT_PROJECT_FOLDER / "stack.env"
 ENV_FILE_TO_USE = STACK_ENV_FILE if STACK_ENV_FILE.exists() else ENV_FILE
 
 
