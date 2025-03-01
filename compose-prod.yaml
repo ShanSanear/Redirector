@@ -18,6 +18,8 @@ services:
     working_dir: /app/src
     command: bash scripts/prestart.sh
     env_file: stack.env
+    networks:
+      - "redirector"
   server:
     hostname: "redirector.local"
     build:
@@ -45,6 +47,8 @@ services:
       timeout: 5s
       retries: 5
     env_file: stack.env
+    networks:
+      - "redirector"
 volumes:
   redirector-db-data:
 
