@@ -19,6 +19,7 @@ services:
     command: bash scripts/prestart.sh
     env_file: stack.env
   server:
+    hostname: "redirector.local"
     build:
       context: .
     depends_on:
