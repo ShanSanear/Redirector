@@ -20,16 +20,13 @@ services:
       - bash
       - -c
       - |
-        echo `pwd` 
+        echo `pwd`
+        ls -laR
         scripts/prestart.sh
-    #volumes:
-    #  - ./src/:/app/src/
     env_file: stack.env
   server:
     build:
       context: .
-    #volumes:
-    #  - ./src/:/app/src/
     depends_on:
       db:
         condition: service_healthy
